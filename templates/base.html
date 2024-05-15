@@ -1,0 +1,47 @@
+<!--base.html-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-5.2.3/dist/css/bootstrap.min.css'%}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        {% include 'header.html' %}
+        <div class="row">
+            <div class="col-sm-3 col-md-3">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Menu</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group">
+                            <a href="/" class="list-group-item">HOME</a>
+                            <a href="https://google.com/news" class="list-group-item">即時新聞</a>
+                            <a href="https://youtube.com/" class="list-group-item">YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9 col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class="card-body">
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class="card-footer">
+                        {% include 'footer.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

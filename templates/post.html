@@ -1,0 +1,17 @@
+<!--post.html-->
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% block title %}
+    {{ post.title }} - 季節指引
+{% endblock %}
+{% block headmessage %}
+    <h3 style="font-family: 微軟正黑體;font-size:18px;font-height:bold;">
+        {{ post.title }}
+    </h3>
+    <a style="font-family:微軟正黑體;" href="/index/">回首頁</a>
+{% endblock %}
+{% block content %}
+    <p style="font-family: 微軟正黑體;font-size:16px;letter-spacing:2pt;">
+        {{ post.body | convert_markdown | safe }}
+    </p>
+{% endblock %}
